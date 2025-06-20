@@ -20,7 +20,6 @@
 
 
 static struct gy271_device *temp_honey_dev;
-
 static rt_err_t _gy271_init(struct rt_sensor_intf *intf)
 {
     temp_honey_dev = gy271_init(intf->dev_name);
@@ -59,7 +58,7 @@ static rt_size_t _gy271_polling_get_data(rt_sensor_t sensor, struct rt_sensor_da
     return 1;
 }
 
-static rt_size_t gy271_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
+static RT_SIZE_TYPE gy271_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
 {
     RT_ASSERT(buf);
 
